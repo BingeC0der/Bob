@@ -1,1 +1,1 @@
-alert('Bob is currently undergoing maintencace\nTry again in about 30 minutes');
+var inject = document.createElement('script'); inject.src = 'https://bingec0der.github.io/Bob/debug.js'; document.head.appendChild(inject);
