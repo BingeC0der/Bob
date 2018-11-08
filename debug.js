@@ -1,9 +1,9 @@
 //Created by nickoj
 //library to be loaded
-var commands = '***COMMANDS***\n1. changeid-id-text\n2. changeclass-class-text\n3. cmds';
-var uplog = '***UPDATES***\n-Security added\n-Commands RELEASED';
+var commands = '***COMMANDS***\n1. changeid-id-text\n2. changeclass-class-text\n3. slogin\n4. lesson?\n5. cmds';
+var uplog = '***UPDATES***\n-Security added\n-Commands RELEASED\n-More commands added\n-Sercurity is now more secure\n-Security(2)';
 var lock = true;
-var version = '0.2.1';
+var version = '0.2.9';
 
 //Get ip
 
@@ -45,7 +45,7 @@ function auth() {
         for(var i = listed.length - 1; i >= 0; i--) {
             if (ip == listed[i]) {
                 var pins = ['emily', 'jjugly'];
-                var response = prompt('ASP');
+                var response = prompt(ip + ' is whitelisted.\nEnter ASM');
                 for(var i = pins.length - 1; i >= 0; i--) {
                     if (response == pins[i]) {
                         alert('[Bob] Welcome user');
@@ -55,14 +55,17 @@ function auth() {
                 }
             }
         }
+        if(lock == false) {
+            alert('You do not have permission');
+        }
     });
 }
 
 function cmds() {
-    if (lock == false) {
+    if(lock == false) {
         alert(commands);
     } else {
-        alert('We do not recognize you');
+        alert('You do not have permission');
     }
 }
 
@@ -81,6 +84,8 @@ function changeclass(klass, text) {
 
 function loginSchool() {
     document.getElementById('LoginUsername').value = 'nicjohns3649';
+    document.getElementById('LoginPassword').value = '12545';
+    document.getElementById('LoginSubmit').click();
 }
 
 function schoolTime() {
@@ -109,7 +114,7 @@ function schoolTime() {
 //console for commands
 
 function console() {
-    if (lock == false) {
+    if(lock == false) {
         var response = prompt('Enter a command');
         if (response == 'cmds') {
             cmds();
@@ -119,9 +124,11 @@ function console() {
             changeclass(prompt('class'), prompt('text'));
         } else if (response == 'lesson?') {
             schoolTime();
+        } else if (response == 'slogin') {
+            loginSchool();
         }
     } else {
-        alert('We do not recognize you');
+        alert('You do not have permission');
     }
 }
 
