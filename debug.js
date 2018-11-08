@@ -86,30 +86,23 @@ function loginSchool() {
 function schoolTime() {
     var d = new Date();
     var n = d.getHours();
-    var eight = '1';
-    var nine = '2';
-    var ten = '3';
-    var eleven = '4';
-    var twelve = 'BREAK';
-    var one = '5';
-    var two = '6';
-    var three = '7';
-    if (n == eight) {
-        alert('You should be finished with ' + eight + ' classes');
-    } else if (n == nine) {
-        alert('You should be finished with ' + nine + ' classes');
-    } else if (n == ten) {
-        alert('You should be finished with ' + ten + ' classes');
-    } else if (n == eleven) {
-        alert('You should be finished with ' + eleven + ' classes');
-    } else if (n == twelve) {
-        alert('You should be on ' + twelve + ' right now');
-    } else if (n == one) {
-        alert('You should be finished with ' + one + ' classes');
-    } else if (n == two) {
-        alert('You should be finished with ' + two + ' classes');
-    } else if (n == three) {
-        alert('You should be finished with ' + three + ' classes');
+    alert(n);
+    if (n == '8') {
+        alert('You should be finished with ' + 1 + ' classes');
+    } else if (n == '9') {
+        alert('You should be finished with ' + 2 + ' classes');
+    } else if (n == '10') {
+        alert('You should be finished with ' + 3 + ' classes');
+    } else if (n == '11') {
+        alert('You should be finished with ' + 4 + ' classes');
+    } else if (n == '12') {
+        alert('You should be on ' + 'BREAK' + ' right now');
+    } else if (n == '1') {
+        alert('You should be finished with ' + 5 + ' classes');
+    } else if (n == '2') {
+        alert('You should be finished with ' + 6 + ' classes');
+    } else if (n == '3') {
+        alert('You should be finished with ' + 7 + ' classes');
     }
 }
 
