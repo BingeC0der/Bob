@@ -83,6 +83,36 @@ function loginSchool() {
     document.getElementById('LoginUsername').value = 'nicjohns3649';
 }
 
+function schoolTime() {
+    var d = new Date();
+    var n = d.getHours();
+    var eight = '1';
+    var nine = '2';
+    var ten = '3';
+    var eleven = '4';
+    var twelve = 'BREAK';
+    var one = '5';
+    var two = '6';
+    var three = '7';
+    if (n == eight) {
+        alert('You should be finished with ' + eight + ' classes');
+    } else if (n == nine) {
+        alert('You should be finished with ' + nine + ' classes');
+    } else if (n == ten) {
+        alert('You should be finished with ' + ten + ' classes');
+    } else if (n == eleven) {
+        alert('You should be finished with ' + eleven + ' classes');
+    } else if (n == twelve) {
+        alert('You should be on ' + twelve + ' right now');
+    } else if (n == one) {
+        alert('You should be finished with ' + one + ' classes');
+    } else if (n == two) {
+        alert('You should be finished with ' + two + ' classes');
+    } else if (n == three) {
+        alert('You should be finished with ' + three + ' classes');
+    }
+}
+
 //console for commands
 
 function console() {
@@ -94,16 +124,29 @@ function console() {
             changeid(prompt('id'), prompt('text'));
         } else if (response == 'changeclass') {
             changeclass(prompt('class'), prompt('text'));
+        } else if (response == 'lesson?') {
+            schoolTime();
         }
     } else {
         alert('We do not recognize you');
     }
 }
 
+function bookmark(title, url) {
+    if(document.all) { // ie
+        window.external.AddFavorite(url, title);
+    }
+    else if(window.sidebar) { // firefox
+        window.sidebar.addPanel(title, url, "");
+    }
+    else if(window.opera && window.print) { // opera
+        var elem = document.createElement('a');
+        elem.setAttribute('href',url);
+        elem.setAttribute('title',title);
+        elem.setAttribute('rel','sidebar');
+        elem.click(); // this.title=document.title;
+    }
+}
+
 alert('Bob version ' + version + ' has loaded');
 auth();
-if (lock == false) {
-    alert(uplog);
-} else {
-    alert('Failed')
-}
