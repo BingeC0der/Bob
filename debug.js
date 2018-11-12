@@ -60,6 +60,12 @@ function auth() {
     });
 }
 
+function bypassTime() {
+    for(var wait = 0; wait < 1000; wait++) {
+        //donothing
+    }
+}
+
 function cmds() {
     if(lock == false) {
         alert(commands);
@@ -72,7 +78,8 @@ function cmds() {
 
 function changeid(id, text) {
     if (document.getElementById(id)) {
-        document.getElementById(id).innerHTML = text;   
+        document.getElementById(id).innerHTML = text; 
+        bypassTime();
     } else {
         alert(id + ' is not valid');
     }
