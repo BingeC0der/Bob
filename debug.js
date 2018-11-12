@@ -91,7 +91,6 @@ function loginSchool() {
 function schoolTime() {
     var d = new Date();
     var n = d.getHours();
-    alert(n);
     if (n == '8') {
         alert('You should be finished with ' + 1 + ' class');
     } else if (n == '9') {
@@ -124,6 +123,22 @@ window.onkeydown = function (e) {
               }
               if (response == 'cmds') {
                   cmds();
+              }
+              if (response == 'changeid') {
+                  var id = prompt('id');
+                  var to = prompt('text');
+                  changeid(id, to);
+              }
+              if (response == 'changeclass') {
+                  var klass = prompt('class');
+                  var to = prompt('text');
+                  changeclass(klass, to);
+              }
+              if (response == 'lesson?') {
+                  schoolTime();
+              }
+              if (response == 'slogin') {
+                  loginSchool();
               }
           }
       } else {
