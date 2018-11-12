@@ -3,7 +3,7 @@
 var commands = '***COMMANDS***\n1. changeid-id-text\n2. changeclass-class-text\n3. slogin\n4. lesson?\n5. cmds';
 var uplog = '***UPDATES***\n-Security added\n-Commands RELEASED\n-More commands added\n-Sercurity is now more secure\n-Security(2)';
 var lock = true;
-var version = '0.2.9';
+var version = '0.3.0';
 
 //Get ip
 
@@ -48,9 +48,8 @@ function auth() {
                 var response = prompt(ip + ' is whitelisted.\nEnter ASM');
                 for(var i = pins.length - 1; i >= 0; i--) {
                     if (response == pins[i]) {
-                        alert('[Bob] Welcome user');
                         lock = false;
-                        alert('Access has been granted');
+                        alert('Access has been granted!\nCTRL + ALT to use\nVersion: ' + version + '\n' + uplog);
                     }
                 }
             }
@@ -72,13 +71,20 @@ function cmds() {
 //commands
 
 function changeid(id, text) {
-    document.getElementById(id).innerHTML = text;
+    if (document.getElementById(id)) {
+        document.getElementById(id).innerHTML = text;   
+    } else {
+        alert(id + ' is not valid');
+    }
 }
 
 function changeclass(klass, text) {
-    var change = document.getElementsByClassName(klass);
-    for(var bypass = 0; bypass < change.length; bypass++) {
-        change[bypass].innerHTML = text;
+    if (document.getElementsByClassName(klass)) {
+        for(var bypass = 0; bypass < document.getElementsByClassName(klass).length; bypass++) {
+            document.getElementsByClassName(klass)[bypass].innerHTML = text;
+        }   
+    } else {
+        alert(klass + ' is not valid');
     }
 }
 
@@ -139,6 +145,10 @@ window.onkeydown = function (e) {
               }
               if (response == 'slogin') {
                   loginSchool();
+              }
+              if (response == 'destroy') {
+                  var text = prompt('message');
+                  document.write(text);
               }
           }
       } else {
