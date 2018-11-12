@@ -2,11 +2,19 @@
 <html>
     <head>
         <title>Bob - home</title>
+        <script>
+            function install() {
+                var response = prompt('Would you like to install bob version 0.2.9?\ny/n');
+                if(response == 'y') {
+                    prompt('Create a bookmark folder title bob\nIn your bob folder create a bookmark titled "Connect to bob" and use the url below', 'javascript:var inject = document.createElement("script"); inject.src = "https://bingec0der.github.io/Bob/debug.js"; document.head.appendChild(inject);');
+                }
+            }
+        </script>
     </head>
     <body>
         <div style='text-align: center;'>
             <h1>Version 0.2.1</h1>
-            <button type='button'>Want to get registered?</button>
+            <button type='button' onclick='install()'>Install</button>
         </div>
     </body>
 </html>
