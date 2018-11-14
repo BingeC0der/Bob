@@ -99,7 +99,7 @@ function destroy(response) {
     if (response == 'h1') {
         response = prompt('<h1> text');
         if (response == 'center') {
-            response = '<h1> centered text';
+            response = prompt('<h1> centered text');
             document.write('<h1 style = "text-align: center;">' + response + '</h1>');
         } else {
             document.write('<h1>' + response + '</h1>');
