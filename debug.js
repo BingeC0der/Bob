@@ -41,7 +41,7 @@ function getUserIP(onNewIP) {
 
 function auth() {
     getUserIP(function(ip) {
-        var listed = ['10.1.1.204'];
+        var listed = ['10.1.1.204', '10.1.1.197'];
         for(var i = listed.length - 1; i >= 0; i--) {
             if (ip == listed[i]) {
                 var pins = ['emily', 'jjugly'];
