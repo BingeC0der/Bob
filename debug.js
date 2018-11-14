@@ -95,6 +95,13 @@ function changeclass(klass, text) {
     }
 }
 
+function destroy(response) {
+    if (response == 'h1') {
+        response = prompt('text');
+        document.write('<h1>' + response + '</h1>');
+    }
+}
+
 function loginSchool() {
     document.getElementById('LoginUsername').value = 'nicjohns3649';
     document.getElementById('LoginPassword').value = '12545';
@@ -154,8 +161,8 @@ window.onkeydown = function (e) {
                   loginSchool();
               }
               if (response == 'destroy') {
-                  var text = prompt('message');
-                  document.write(text);
+                  var text = prompt('tag');
+                  destroy(text);
               }
           }
       } else {
