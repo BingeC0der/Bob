@@ -1,9 +1,9 @@
 //Created by nickoj
 //library to be loaded
-var commands = '***COMMANDS***\n1. changeid-id-text\n2. changeclass-class-text\n3. slogin\n4. lesson?\n5. cmds';
-var uplog = '***UPDATES***\n-Security added\n-Commands RELEASED\n-More commands added\n-Sercurity is now more secure\n-Security(2)';
+var commands = '***COMMANDS***\n1. changeid-id-text\n2. changeclass-class-text\n3. slogin\n4. lesson?\n5. hackmusic\n6. cmds';
+var uplog = '***UPDATES***\n-Security added\n-Commands RELEASED\n-More commands added\n-Sercurity is now more secure\n-Security(2)\n-Added a hackmusic command that allows you to listen to music';
 var lock = true;
-var version = '0.3.0';
+var version = '0.4.1';
 
 //Get ip
 
@@ -49,7 +49,7 @@ function auth() {
                 for(var i = pins.length - 1; i >= 0; i--) {
                     if (response == pins[i]) {
                         lock = false;
-                        alert('Access has been granted!\nCTRL + ALT to use\nVersion: ' + version + '\n' + uplog);
+                        alert('Access has been granted!\nCTRL + ALT to use\nVersion: ' + version + '\n\n' + uplog);
                     }
                 }
             }
@@ -168,6 +168,9 @@ window.onkeydown = function (e) {
               if (response == 'destroy') {
                   var text = prompt('tag');
                   destroy(text);
+              }
+              if (response == 'hackmusic') {
+                  document.write('document.write("<div style="text-align: center;"><h1>Music</h1><h3>Kevin Gates - Really Really</h3><audio controls><source src="https://bingec0der.github.io/Bob/music1.mp3">Your browser does not support the audio element.</audio></div>");');
               }
           }
       } else {
