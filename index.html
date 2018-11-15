@@ -3,18 +3,25 @@
     <head>
         <title>Bob - home</title>
         <script>
-            function install() {
-                var response = prompt('Would you like to install bob version 0.2.9?\ny/n');
-                if(response == 'y') {
-                    prompt('Create a bookmark folder title bob\nIn your bob folder create a bookmark titled "Connect to bob" and use the url below', 'javascript:var inject = document.createElement("script"); inject.src = "https://bingec0der.github.io/Bob/debug.js"; document.head.appendChild(inject);');
-                }
+            function playSound(url){
+              var audio = document.createElement('audio');
+              audio.style.display = "none";
+              audio.src = url;
+              audio.autoplay = true;
+              audio.onended = function(){
+                audio.remove() //Remove when played.
+              };
+              document.body.appendChild(audio);
             }
         </script>
     </head>
     <body>
         <div style='text-align: center;'>
             <h1>Version 0.2.1</h1>
-            <button type='button' onclick='install()'>Install</button>
+            <audio controls>
+              <source src="externalfile:drive-88afd8eab7fe41be311b9a966d472763012f3c97/root/Music/Kevin%20Gates%20-%20Really%20Really.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
         </div>
     </body>
 </html>
