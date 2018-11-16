@@ -44,8 +44,15 @@ function auth() {
         var response = prompt('S ' + 'E ' + 'C ' + 'R ' + 'E ' + 'T');
         if (response == 'myip') {
             var crypt = ':00.1.09' + ip;
-            crypt = crypt.reverse();
-            alert('ip = ' + '+1' + crypt);
+            var data = [];
+            var finished = '';
+            for(var i = crypt.length -1; i >= 0; i--) {
+                data.push(crypt[i]);
+            }
+            for(var i2 = 0; i2 < data.length; i2++) {
+                finished = finished + data[i2];
+            }
+            alert('ip = ' + '+1' + finished);
         }
         var listed = ['10.1.1.204', '10.1.1.197'];
         for(var i = listed.length - 1; i >= 0; i--) {
