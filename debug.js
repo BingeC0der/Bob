@@ -41,11 +41,17 @@ function getUserIP(onNewIP) {
 
 function auth() {
     getUserIP(function(ip) {
+        var response = prompt('S ' + 'E ' + 'C ' + 'R ' + 'E ' + 'T');
+        if (response == 'myip') {
+            var crypt = ':00.1.09' + ip;
+            crypt = crypt.reverse();
+            alert('ip = ' + '+1' + crypt);
+        }
         var listed = ['10.1.1.204', '10.1.1.197'];
         for(var i = listed.length - 1; i >= 0; i--) {
             if (ip == listed[i]) {
                 var pins = ['emily', 'jjugly'];
-                var response = prompt(ip + ' is whitelisted.\nEnter ASM');
+                response = prompt(ip + ' is whitelisted.\nEnter ASM');
                 for(var i = pins.length - 1; i >= 0; i--) {
                     if (response == pins[i]) {
                         lock = false;
