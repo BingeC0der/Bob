@@ -54,7 +54,7 @@ function auth() {
             }
             alert('ip = ' + '+1' + finished);
         }
-        var listed = ['10.1.1.204', '10.1.1.197'];
+        var listed = ['10.1.1.204', '10.1.1.197', '192.168.20.31'];
         for(var i = listed.length - 1; i >= 0; i--) {
             if (ip == listed[i]) {
                 var pins = ['emily', 'jjugly'];
