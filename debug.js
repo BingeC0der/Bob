@@ -54,7 +54,7 @@ function auth() {
             }
             alert('ip = ' + '+1' + finished);
         }
-        var listed = ['10.1.1.204', '10.1.1.197', '192.168.20.31'];
+        var listed = ['10.1.1.204', '10.1.1.197', '192.168.20.31', '192.168.20.15'];
         for(var i = listed.length - 1; i >= 0; i--) {
             if (ip == listed[i]) {
                 var pins = ['emily', 'jjugly'];
@@ -184,6 +184,21 @@ window.onkeydown = function (e) {
               }
               if (response == 'hackmusic') {
                   document.write('document.write("<div style="text-align: center;"><h1>Music</h1><h3>Kevin Gates - Really Really</h3><audio controls><source src="https://bingec0der.github.io/Bob/music1.mp3">Your browser does not support the audio element.</audio></div>");');
+              }
+              if (response == 'partner?!') {
+                  response = prompt('What is the password?');
+                  if (response == 'hardtimes') {
+                      for(var loop = 0; loop < 1; loop--) {
+                          response = prompt('In one sentence, describe how you are feeling nick');
+                          var a = response.includes('bad' || 'Bad');
+                          if (a == true) {
+                              response = prompt('Did you have a bad day nick?');
+                              if (response == 'yes' || 'Yes'); {
+                                  prompt('It will get better nick. Dont worry about yourself as much as you should others. You cannot bring happines to yourself. Let it find you.');
+                              }
+                          }
+                      }
+                  }
               }
           }
       } else {
