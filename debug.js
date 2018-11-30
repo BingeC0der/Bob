@@ -1,11 +1,26 @@
 //Created by nickoj
 //library to be loaded
-var commands = '***COMMANDS***\n1. changeid-id-text\n2. changeclass-class-text\n3. slogin\n4. lesson?\n5. hackmusic\n6. cmds';
+var commands = '***COMMANDS***\n1. changeid-id-text\n2. changeclass-class-text\n5. hackmusic\n6. cmds';
 var uplog = '***UPDATES***\n-Security added\n-Commands RELEASED\n-More commands added\n-Sercurity is now more secure\n-Security(2)\n-Added a hackmusic command that allows you to listen to music';
-var lock = true;
+var asnw = 'JgThgYkl1890JG';
+var finessed = '';
 var version = '0.4.1';
 
 //Get ip
+
+function securityUP(string) {
+    if(string.length > 1) {
+        var data = [];
+        var finished = '';
+        for(var i = string.length -1; i >= 0; i--) {
+            data.push(string[i]);
+        }
+        for(var i2 = 0; i2 < data.length; i2++) {
+            finished = finished + data[i2];
+        }
+        return finished;
+    }
+}
 
 function getUserIP(onNewIP) {
     var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
@@ -41,46 +56,27 @@ function getUserIP(onNewIP) {
 
 function auth() {
     getUserIP(function(ip) {
-        var response = prompt('S ' + 'E ' + 'C ' + 'R ' + 'E ' + 'T');
-        if (response == 'myip') {
-            var crypt = ':00.1.09' + ip;
-            var data = [];
-            var finished = '';
-            for(var i = crypt.length -1; i >= 0; i--) {
-                data.push(crypt[i]);
-            }
-            for(var i2 = 0; i2 < data.length; i2++) {
-                finished = finished + data[i2];
-            }
-            alert('ip = ' + '+1' + finished);
-        }
-        var listed = ['10.1.1.204', '10.1.1.197', '192.168.20.31', '192.168.20.15'];
+        var listed = ['10.1.1.204', '10.1.1.197', '192.168.20.31', '192.168.20.15', '192.168.20.18'];
         for(var i = listed.length - 1; i >= 0; i--) {
             if (ip == listed[i]) {
                 var pins = ['emily', 'jjugly'];
-                response = prompt(ip + ' is whitelisted.\nEnter ASM');
+                var response = prompt(ip + ' is whitelisted.\nEnter ASM');
                 for(var i = pins.length - 1; i >= 0; i--) {
                     if (response == pins[i]) {
-                        lock = false;
+                        finessed = securityUP(asnw);
                         alert('Access has been granted!\nCTRL + ALT to use\nVersion: ' + version + '\n\n' + uplog);
                     }
                 }
             }
         }
-        if(lock == true) {
+        if(finessed.length < 12) {
             alert('You do not have permission');
         }
     });
 }
 
-function bypassTime() {
-    for(var wait = 0; wait < 1000; wait++) {
-        //donothing
-    }
-}
-
 function cmds() {
-    if(lock == false) {
+    if(finessed == securityUP(asnw)) {
         alert(commands);
     } else {
         alert('You do not have permission');
@@ -92,7 +88,6 @@ function cmds() {
 function changeid(id, text) {
     if (document.getElementById(id)) {
         document.getElementById(id).innerHTML = text; 
-        bypassTime();
     } else {
         alert(id + ' is not valid');
     }
@@ -108,7 +103,7 @@ function changeclass(klass, text) {
     }
 }
 
-function destroy(response) {
+function edit(response) {
     if (response == 'h1') {
         response = prompt('<h1> text');
         if (response == 'center') {
@@ -120,40 +115,12 @@ function destroy(response) {
     }
 }
 
-function loginSchool() {
-    document.getElementById('LoginUsername').value = 'nicjohns3649';
-    document.getElementById('LoginPassword').value = '12545';
-    document.getElementById('LoginSubmit').click();
-}
-
-function schoolTime() {
-    var d = new Date();
-    var n = d.getHours();
-    if (n == '8') {
-        alert('You should be finished with ' + 1 + ' class');
-    } else if (n == '9') {
-        alert('You should be finished with ' + 2 + ' classes');
-    } else if (n == '10') {
-        alert('You should be finished with ' + 3 + ' classes');
-    } else if (n == '11') {
-        alert('You should be finished with ' + 4 + ' classes');
-    } else if (n == '12') {
-        alert('You should be on ' + 'BREAK' + ' right now');
-    } else if (n == '1') {
-        alert('You should be finished with ' + 5 + ' classes');
-    } else if (n == '2') {
-        alert('You should be finished with ' + 6 + ' classes');
-    } else if (n == '3') {
-        alert('You should be finished with ' + 7 + ' classes');
-    }
-}
-
 auth();
 
 window.onkeydown = function (e) {
   if (!e) e = window.event;
   if (e.ctrlKey && e.altKey) { 
-      if (lock == false) {
+      if (finessed == securityUP(asnw)) {
           for(var loop = 1; loop > 0; loop = loop) {
               var response = prompt('command\n"cmds" for list of commands\n"stop" to close');
               if (response == 'stop') {
@@ -166,24 +133,22 @@ window.onkeydown = function (e) {
                   var id = prompt('id');
                   var to = prompt('text');
                   changeid(id, to);
+                  loop = 0;
               }
               if (response == 'changeclass') {
                   var klass = prompt('class');
                   var to = prompt('text');
                   changeclass(klass, to);
+                  loop = 0;
               }
-              if (response == 'lesson?') {
-                  schoolTime();
-              }
-              if (response == 'slogin') {
-                  loginSchool();
-              }
-              if (response == 'destroy') {
+              if (response == 'customize') {
                   var text = prompt('tag');
-                  destroy(text);
+                  edit(text);
+                  loop = 0;
               }
               if (response == 'hackmusic') {
-                  document.write('document.write("<div style="text-align: center;"><h1>Music</h1><h3>Kevin Gates - Really Really</h3><audio controls><source src="https://bingec0der.github.io/Bob/music1.mp3">Your browser does not support the audio element.</audio></div>");');
+                  document.write('<div style="text-align: center;"><h1>Music</h1><h3>Kevin Gates - Really Really</h3><audio controls><source src="https://bingec0der.github.io/Bob/music1.mp3">Your browser does not support the audio element.</audio><h1>Music</h1><h3>Kevin Gates - Out The Mud</h3><audio controls><source src="https://bingec0der.github.io/Bob/music2.mp3">Your browser does not support the audio element.</audio></div>;');
+                  loop = 0;
               }
               if (response == 'partner?!') {
                   response = prompt('What is the password?');

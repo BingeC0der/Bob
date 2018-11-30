@@ -3,25 +3,40 @@
     <head>
         <title>Bob - home</title>
         <script>
-            function playSound(url){
-              var audio = document.createElement('audio');
-              audio.style.display = "none";
-              audio.src = url;
-              audio.autoplay = true;
-              audio.onended = function(){
-                audio.remove() //Remove when played.
-              };
-              document.body.appendChild(audio);
+            /*
+            
+            <div style='text-align: center;'>
+                <h1>Version 0.2.1</h1>
+                <audio controls>
+                  <source src="externalfile:drive-88afd8eab7fe41be311b9a966d472763012f3c97/root/Music/Kevin%20Gates%20-%20Really%20Really.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+                </audio>
+            </div>
+            
+            */
+            
+            function install(key)  {
+                if(key == true) {
+                    for(var i = 0; i < 1; i = 0) {
+                        var response = prompt('Would you like to install bob?\nY/N')
+                        if(response == 'Y') {
+                            prompt('1. Press CTRL + C\n2. Create a new bookmark\n3. Name your new bookmark Bob\n4. Remove the URL and press CTRL + V in the URL box\n5. Save the bookmark\nClick Bob to load', 'javascript:var inject = document.createElement("script"); inject.src = "https://bingec0der.github.io/Bob/bob.js"; document.head.appendChild(inject);');
+                        } else if(response == 'N') {
+                            i = 1;
+                        } else {
+                            alert('I do not understand you. Please try again');
+                        }
+                    }
+                } else {
+                    //Do nothing, be lazy
+                }
             }
         </script>
     </head>
     <body>
         <div style='text-align: center;'>
-            <h1>Version 0.2.1</h1>
-            <audio controls>
-              <source src="externalfile:drive-88afd8eab7fe41be311b9a966d472763012f3c97/root/Music/Kevin%20Gates%20-%20Really%20Really.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-            </audio>
+            <h1>Bob</h1>
+            <button type='button' onclick='var unlock = true; install(unlock);'>Install</button>
         </div>
     </body>
 </html>
