@@ -2,9 +2,12 @@
 //library to be loaded
 var commands = '***COMMANDS***\n1. changeid-id-text\n2. changeclass-class-text\n5. hackmusic\n6. cmds';
 var uplog = '***UPDATES***\n-Security added\n-Commands RELEASED\n-More commands added\n-Sercurity is now more secure\n-Security(2)\n-Added a hackmusic command that allows you to listen to music';
-var asnw = 'JgThgYkl1890JG';
+var asnw = '';
+var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+for (var i = 0; i < 5; i++)
+asnw += possible.charAt(Math.floor(Math.random() * possible.length));
 var finessed = '';
-var version = '0.4.1';
+var version = '0.5.0';
 
 //Get ip
 
