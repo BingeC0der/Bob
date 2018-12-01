@@ -1,7 +1,7 @@
 //Created by nickoj
 //library to be loaded
 var commands = '***COMMANDS***\n1. changeid-id-text\n2. changeclass-class-text\n5. hackmusic\n6. cmds';
-var uplog = '***UPDATES***\n-Security added\n-Commands RELEASED\n-More commands added\n-Sercurity is now more secure\n-Security(2)\n-Added a hackmusic command that allows you to listen to music';
+var uplog = '***UPDATES***\n--12/1/18--\nSecurity\nImprovements\nBug fixes';
 var asnw = '';
 var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 for (var i = 0; i < 20; i++)
@@ -59,7 +59,7 @@ function getUserIP(onNewIP) {
 
 function auth() {
     getUserIP(function(ip) {
-        var listed = ['10.1.1.204', '10.1.1.197', '192.168.20.31', '192.168.20.15', '192.168.20.18'];
+        var listed = ['10.1.1.204', '10.1.1.197', '192.168.20.31', '192.168.20.15', '192.168.20.18', '192.168.20.24'];
         for(var i = listed.length - 1; i >= 0; i--) {
             if (ip == listed[i]) {
                 var pins = ['emily', 'jjugly'];
