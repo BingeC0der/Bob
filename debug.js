@@ -1,6 +1,6 @@
 //Created by nickoj
 //library to be loaded
-var commands = '***COMMANDS***\n1. changeid-id-text\n2. changeclass-class-text\n5. hackmusic\n6. cmds';
+var commands = '***COMMANDS***\n1. changeid - Change text using the id\n2. changeclass - Change text using the class\n5. hackmusic - Listen to unblocked music\n6. stop - Close the dialog box\n7. cmds - View a list of commands you can use';
 var uplog = '***UPDATES***\n--12/1/18--\nSecurity\nImprovements\nBug fixes';
 var asnw = '';
 var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -111,9 +111,9 @@ function edit(response) {
         response = prompt('<h1> text');
         if (response == 'center') {
             response = prompt('<h1> centered text');
-            document.write('<h1 style = "text-align: center;">' + response + '</h1>');
+            document.write('<div style="text-align: right;"><button type="button" onclick="">Continue editing</button></div><h1 style = "text-align: center;">' + response + '</h1>');
         } else {
-            document.write('<h1>' + response + '</h1>');
+            document.write('<div style="text-align: right;"><button type="button" onclick="">Continue editing</button></div><h1>' + response + '</h1>');
         }
     }
 }
