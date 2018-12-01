@@ -4,7 +4,7 @@ var commands = '***COMMANDS***\n1. changeid-id-text\n2. changeclass-class-text\n
 var uplog = '***UPDATES***\n-Security added\n-Commands RELEASED\n-More commands added\n-Sercurity is now more secure\n-Security(2)\n-Added a hackmusic command that allows you to listen to music';
 var asnw = '';
 var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-for (var i = 0; i < 5; i++)
+for (var i = 0; i < 20; i++)
 asnw += possible.charAt(Math.floor(Math.random() * possible.length));
 var finessed = '';
 var version = '0.5.0';
@@ -72,7 +72,7 @@ function auth() {
                 }
             }
         }
-        if(finessed.length < 12) {
+        if(finessed.length < 20) {
             alert('You do not have permission');
         }
     });
