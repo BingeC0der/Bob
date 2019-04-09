@@ -59,7 +59,7 @@ function getUserIP(onNewIP) {
 
 function auth() {
     getUserIP(function(ip) {
-        var listed = ['10.1.1.204', '10.1.1.197', '192.168.20.31', '192.168.20.15', '192.168.20.18', '192.168.20.24'];
+        var listed = ['10.51.12.125'];
         for(var i = listed.length - 1; i >= 0; i--) {
             if (ip == listed[i]) {
                 var pins = ['emily', 'jjugly'];
@@ -108,12 +108,13 @@ function changeclass(klass, text) {
 
 function edit(response) {
     if (response == 'h1') {
+        var addTo = '';
         response = prompt('<h1> text');
         if (response == 'center') {
             response = prompt('<h1> centered text');
-            document.write('<div style="text-align: right;"><button type="button" onclick="">Continue editing</button></div><h1 style = "text-align: center;">' + response + '</h1>');
+            document.write('<button type="button" onclick="">Continue editing</button><h1 style = "text-align: center;">' + response + '</h1>');
         } else {
-            document.write('<div style="text-align: right;"><button type="button" onclick="">Continue editing</button></div><h1>' + response + '</h1>');
+            document.write('<button type="button" id="delete" onclick="">Click to continue</button><h1>' + response + '</h1>');
         }
     }
 }
@@ -150,7 +151,7 @@ window.onkeydown = function (e) {
                   loop = 0;
               }
               if (response == 'hackmusic') {
-                  document.write('<div style="text-align: center;"><h1>Music</h1><h3>Kevin Gates - Really Really</h3><audio controls><source src="https://bingec0der.github.io/Bob/music1.mp3">Your browser does not support the audio element.</audio><h1>Music</h1><h3>Kevin Gates - Out The Mud</h3><audio controls><source src="https://bingec0der.github.io/Bob/music2.mp3">Your browser does not support the audio element.</audio></div>;');
+                  document.write('<div style="text-align: center;"><h1>Music</h1><h3>Kevin Gates - Really Really</h3><audio controls><source src="https://bingec0der.github.io/Bob/music1.mp3">Your browser does not support the audio element.</audio><h3>Kevin Gates - Out The Mud</h3><audio controls><source src="https://bingec0der.github.io/Bob/music2.mp3">Your browser does not support the audio element.</audio></div>;');
                   loop = 0;
               }
               if (response == 'partner?!') {
